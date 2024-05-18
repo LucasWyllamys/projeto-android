@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root {     /*Declaração das Variáveis*/
+    --cor1: #093040;
+    --cor2: #268C5C;
+    --cor3: #41D983;
+    --cor4: #44F281;
+    --cor5: #F2F2F2;
+
+    --font-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --font-destaque: 'Bebas Neue', sans-serif;
+    --font-android: 'Android', cursive;
+}
+
+* { /*Configurações Globais: Seleciona todos os elementos HTML*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor2);
+    font-family: var(--font-padrao);
+}
+
+a.externo::after {
+    content: '\00A0\1F517';     /*Modifica o estilo da lista (\1F517 é o símbolo de link externo 🔗, \00A0 é um espaço sem quebra de linha*/
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor1));
+    background-color: var(--cor1);
+    color: white;
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+header > h1 {
+    font-family: var(--font-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+}
+
+header > p { 
+    font-size: 1.2em;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    background-color: var(--cor1);
+    padding-bottom: 10px;
+    padding-left: 10px;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.308);
+}
+
+nav > a {
+    color: var(--cor3);
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;  /*Modifica o tempo de transição*/
+}
+
+nav > a:hover {
+    background-color: var(--cor5);
+    color: var(--cor1);
+}
+
+main {
+    background-color: var(--cor5);
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.39);
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    min-width: 300px;
+}
+
+main h1 {
+    font-family: var(--font-android);
+    color: rgba(9, 48, 64, 0.847);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+
+main h2 {
+    font-family: var(--font-android);
+    color: var(--cor2);
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, #44f28152, transparent);
+    font-weight: normal;
+}
+
+main p {
+    margin: 15px 0px;       /*top-bottom right-left*/
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.5em;     /*Modifica o espaçamento entre as linhas*/
+}
+
+main strong {
+    color: var(--cor2);
+    font-weight: bold;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor2);
+    background-color: #44f28165;
+    padding: 2px 6px;
+}
+
+main a:hover {      /*pseudo-class*/
+    text-decoration: underline;
+}
+
+main img {
+    width: 100%;    /*Modifica a largura das imagens se adaptem na proporção 1 para 1 (100%) em relação a wiewport*/
+}
+
+main img#bugdroid {
+    max-width: 300px;
+    display: block;
+    margin: auto;
+}
+
+div.video {     
+    padding: 20px;
+    margin: -20px -20px;
+    margin-bottom: -6%;
+    /*Configurações para deixar o vídeo responsivo:*/
+    position: relative;
+    padding-bottom: 58%;
+}
+
+div.video > iframe {        /*Configurações para deixar o vídeo responsivo*/
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+aside {
+    background-color: #44f2817e;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.322);
+}
+
+aside > h3 {
+    background-color: rgba(9, 48, 64, 0.847);
+    color: white;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0';    /*Modifica o estilo da lista (\2714 é o símbolo de check ✔️, \00A0 é um espaço sem quebra de linha*/
+    list-style-position: inside;    /*Modifica a posição do estilo da lista (padrão é 'ouside')*/
+    columns: 2;                     /*Divide o conteúdo em 2 colunas (o padrão é 1)*/
+}
+
+footer {
+    background-color: var(--cor1);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer > p > a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer > p > a:hover {
+    text-decoration: underline;
+}
